@@ -1,5 +1,5 @@
 import React from 'react';
-import { LocationSearchInput } from '../';
+import { LocationSearchInput } from '../../components';
 import styles from './LocationSearch.module.css';
 
 const LocationSearch = () => {

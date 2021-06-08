@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { LocationSearch, LocationDetails } from './components';
+import { LocationSearch, LocationDetails } from './pages';
 import './css/styles.css';
 
 function App() {

@@ -25,9 +25,8 @@ const LocationSearchInput = () => {
   };
 
   const handleBlur = (e) => {
-    console.log(e);
     setInputActive(false);
-    setDisplayResults(false);
+    // setDisplayResults(false);
   };
 
   const handleHover = (locationId) => {
