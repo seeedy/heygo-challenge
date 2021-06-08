@@ -1,6 +1,7 @@
 import React from 'react';
 
 const LocationResults = (props) => {
+  if (!props.locations) return null;
   return (
     <div>
       <ul>
