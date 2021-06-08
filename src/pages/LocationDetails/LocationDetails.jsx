@@ -25,7 +25,17 @@ const LocationDetails = () => {
 
   return (
     <div className={styles.details}>
-      <LocationMap />
+      <h1 className={styles.header}>{details.name}</h1>
+      <LocationMap
+        name={details.name}
+        center={{
+          lat: details.latitude,
+          lng: details.longitude,
+        }}
+        lat={details.latitude}
+        long={details.longitude}
+        zoom={10}
+      />
     </div>
   );
 };
