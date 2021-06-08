@@ -3,7 +3,7 @@
 .results {
   position: absolute;
   width: 91%;
-  background-color: var(--background-search);
+  background-color: var(--background-secondary);
   border: 1px solid var(--border-input);
   border-radius: 2px;
   margin-top: 2px;

@@ -1,6 +1,6 @@
 @import '../../css/__colors.css';
 
-.search {
+.details {
   position: relative;
   max-width: 480px;
   width: 100%;
@@ -8,9 +8,4 @@
   border-radius: 2rem;
   padding: 1rem;
   box-shadow: rgb(0 0 0 / 10%) 0px 0px 10px 0px;
-}
-
-.header {
-  padding-bottom: 1rem;
-  padding-left: 0.5rem;
 }

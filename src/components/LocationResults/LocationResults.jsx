@@ -12,6 +12,7 @@ const LocationResults = (props) => {
       <ul className={styles.results} onMouseDown={(e) => e.preventDefault()}>
         {props.locations.map((loc) => (
           <Link
+            key={loc.id}
             className={styles.link}
             to={{
               pathname: `/locations/${loc.id}`,
@@ -25,7 +26,6 @@ const LocationResults = (props) => {
                   ? `${styles.result} ${styles.active}`
                   : `${styles.result}`
               }
-              key={loc.id}
               onMouseEnter={() => handleHover(loc.id)}
             >
               {loc.name}

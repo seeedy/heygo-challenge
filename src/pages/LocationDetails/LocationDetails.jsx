@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
+import styles from './LocationDetails.module.css';
 
 const LocationDetails = () => {
   const { id } = useParams();
@@ -8,7 +9,14 @@ const LocationDetails = () => {
     `https://code-challenge-backend.herokuapp.com/locations/${id}`
   );
   console.log(details);
-  return <div>Details for {id}</div>;
+
+  if (!details) return null;
+
+  return (
+    <div className={styles.details}>
+      <h1>{details.name}</h1>
+    </div>
+  );
 };
 
 export default LocationDetails;
