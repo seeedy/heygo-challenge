@@ -12,9 +12,14 @@
 .result {
   list-style-type: none;
   padding: 0.5rem 0.8rem;
-  cursor: default;
 }
 
 .active {
   background-color: var(--background-input-active);
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text-primary);
+  cursor: default;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './LocationResults.module.css';
+import { Link } from 'react-router-dom';
 
 const LocationResults = (props) => {
   const { locations, handleHover, activeLocIndex } = props;
@@ -18,7 +19,15 @@ const LocationResults = (props) => {
           key={loc.id}
           onMouseEnter={() => handleHover(loc.id)}
         >
-          {loc.name}
+          <Link
+            className={styles.link}
+            to={{
+              pathname: `/locations/${loc.id}`,
+              state: { location: loc },
+            }}
+          >
+            {loc.name}
+          </Link>
         </li>
       ))}
     </ul>

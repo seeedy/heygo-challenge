@@ -1,13 +1,22 @@
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { LocationSearch, LocationDetails } from './components';
 import './css/styles.css';
-import { LocationSearch } from './components';
 
 function App() {
   return (
-    <div className='App'>
-      <div className='content'>
-        <LocationSearch />
+    <Router>
+      <div className='App'>
+        <div className='content'>
+          <Switch>
+            <Route path='/locations/:id' children={<LocationDetails />}></Route>
+            <Route path='/'>
+              <LocationSearch />
+            </Route>
+          </Switch>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 

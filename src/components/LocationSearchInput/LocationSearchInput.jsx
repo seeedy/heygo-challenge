@@ -54,7 +54,7 @@ const LocationSearchInput = () => {
           className={styles.input}
           onChange={handleChange}
           onFocus={handleFocus}
-          onBlur={handleBlur}
+          // onBlur={handleBlur}
         />
       </div>
 
