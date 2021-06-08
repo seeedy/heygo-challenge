@@ -1,4 +1,4 @@
-import './App.css';
+import './css/styles.css';
 import { LocationSearch } from './components';
 
 function App() {

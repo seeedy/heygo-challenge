@@ -1,0 +1,8 @@
+:root {
+  --background-primary: rgb(249, 249, 249);
+  --background-search: rgb(255, 255, 255);
+  --background-input: rgb(33, 36, 41);
+  --background-input-focus: rgb(54, 58, 63);
+  --border-input: rgb(100, 100, 100);
+  --text-primary: rgb(0, 20, 82);
+}

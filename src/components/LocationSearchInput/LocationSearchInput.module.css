@@ -1,0 +1,22 @@
+@import '../../css/__colors.css';
+
+.inputDiv {
+  border-radius: 10px;
+  border: 1px solid var(--border-input);
+  background-color: var(--background-primary);
+  padding: 1rem;
+}
+
+.input {
+  width: 100%;
+  color: var(--text-primary);
+  background-color: var(--background-primary);
+  position: relative;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.active {
+  border: 1px solid var(--text-primary);
+}

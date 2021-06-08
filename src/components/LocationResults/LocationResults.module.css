@@ -1,0 +1,16 @@
+@import '../../css/__colors.css';
+
+.results {
+  position: absolute;
+  width: 91%;
+  background-color: var(--background-search);
+  border: 1px solid var(--border-input);
+  border-radius: 10px;
+  margin-top: 2px;
+}
+
+.result {
+  list-style-type: none;
+  padding: 0.5rem 0.8rem;
+  cursor: default;
+}
