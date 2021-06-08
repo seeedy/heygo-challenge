@@ -9,29 +9,28 @@ const LocationResults = (props) => {
 
   return (
     displayResults && (
-      <ul className={styles.results}>
+      <ul className={styles.results} onMouseDown={(e) => e.preventDefault()}>
         {props.locations.map((loc) => (
-          <li
-            className={
-              activeLocIndex === locations.indexOf(loc)
-                ? `${styles.result} ${styles.active}`
-                : `${styles.result}`
-            }
-            key={loc.id}
-            onMouseEnter={() => handleHover(loc.id)}
+          <Link
+            className={styles.link}
+            to={{
+              pathname: `/locations/${loc.id}`,
+              state: { location: loc },
+            }}
+            // prevent the input onBlur to fire before the transition happens
           >
-            <Link
-              className={styles.link}
-              to={{
-                pathname: `/locations/${loc.id}`,
-                state: { location: loc },
-              }}
-              // prevent the input onBlur to fire before the transition happens
-              onMouseDown={(e) => e.preventDefault()}
+            <li
+              className={
+                activeLocIndex === locations.indexOf(loc)
+                  ? `${styles.result} ${styles.active}`
+                  : `${styles.result}`
+              }
+              key={loc.id}
+              onMouseEnter={() => handleHover(loc.id)}
             >
               {loc.name}
-            </Link>
-          </li>
+            </li>
+          </Link>
         ))}
       </ul>
     )
