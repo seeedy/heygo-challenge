@@ -16,7 +16,6 @@ const LocationResults = (props) => {
             className={styles.link}
             to={{
               pathname: `/locations/${loc.id}`,
-              state: { location: loc },
             }}
             // prevent the input onBlur to fire before the transition happens
           >

@@ -2,7 +2,8 @@
 
 .details {
   position: relative;
-  max-width: 480px;
+  max-width: 90vw;
+  max-height: 90vh;
   width: 100%;
   background: var(--background-secondary);
   border-radius: 2rem;
