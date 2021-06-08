@@ -5,9 +5,10 @@ import styles from './LocationSearchInput.module.css';
 
 const LocationSearchInput = () => {
   const [value, setValue] = useState('');
+  const debouncedValue = useDebounce(value, 250);
   const [locations, setLocations] = useState([]);
   const [inputActive, setInputActive] = useState(false);
-  const debouncedValue = useDebounce(value, 250);
+  const [activeLocIndex, setActiveLocIndex] = useState(-1);
 
   useEffect(() => {
     const param = encodeURIComponent(debouncedValue);
@@ -34,6 +35,12 @@ const LocationSearchInput = () => {
     setLocations([]);
   };
 
+  const handleHover = (locationId) => {
+    setActiveLocIndex(
+      locations.indexOf(locations.find((loc) => loc.id === locationId))
+    );
+  };
+
   return (
     <div>
       <div
@@ -51,7 +58,11 @@ const LocationSearchInput = () => {
         />
       </div>
 
-      <LocationResults locations={locations} />
+      <LocationResults
+        locations={locations}
+        handleHover={handleHover}
+        activeLocIndex={activeLocIndex}
+      />
     </div>
   );
 };

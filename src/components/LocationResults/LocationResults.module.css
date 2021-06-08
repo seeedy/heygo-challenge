@@ -5,7 +5,7 @@
   width: 91%;
   background-color: var(--background-search);
   border: 1px solid var(--border-input);
-  border-radius: 10px;
+  border-radius: 2px;
   margin-top: 2px;
 }
 
@@ -13,4 +13,8 @@
   list-style-type: none;
   padding: 0.5rem 0.8rem;
   cursor: default;
+}
+
+.active {
+  background-color: var(--background-input-active);
 }
