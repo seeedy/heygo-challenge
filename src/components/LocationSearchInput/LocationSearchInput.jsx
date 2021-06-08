@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { LocationResults } from '../';
 
 const LocationSearchInput = () => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState('');
+  const [locations, setLocations] = useState();
 
   useEffect(() => {
     console.log(value);
@@ -12,6 +14,7 @@ const LocationSearchInput = () => {
       );
       const locations = await res.json();
       console.log(locations);
+      setLocations(locations);
     };
     fetchLocations();
   }, [value]);
@@ -23,6 +26,7 @@ const LocationSearchInput = () => {
   return (
     <div>
       <input onChange={handleChange} />
+      <LocationResults locations={locations} />
     </div>
   );
 };
