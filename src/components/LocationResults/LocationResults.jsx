@@ -3,34 +3,38 @@ import styles from './LocationResults.module.css';
 import { Link } from 'react-router-dom';
 
 const LocationResults = (props) => {
-  const { locations, handleHover, activeLocIndex } = props;
+  const { locations, handleHover, activeLocIndex, displayResults } = props;
 
-  if (locations.length === 0 || !locations) return null;
+  if (!locations || locations.length === 0) return null;
 
   return (
-    <ul className={styles.results}>
-      {props.locations.map((loc) => (
-        <li
-          className={
-            activeLocIndex === locations.indexOf(loc)
-              ? `${styles.result} ${styles.active}`
-              : `${styles.result}`
-          }
-          key={loc.id}
-          onMouseEnter={() => handleHover(loc.id)}
-        >
-          <Link
-            className={styles.link}
-            to={{
-              pathname: `/locations/${loc.id}`,
-              state: { location: loc },
-            }}
+    displayResults && (
+      <ul className={styles.results}>
+        {props.locations.map((loc) => (
+          <li
+            className={
+              activeLocIndex === locations.indexOf(loc)
+                ? `${styles.result} ${styles.active}`
+                : `${styles.result}`
+            }
+            key={loc.id}
+            onMouseEnter={() => handleHover(loc.id)}
           >
-            {loc.name}
-          </Link>
-        </li>
-      ))}
-    </ul>
+            <Link
+              className={styles.link}
+              to={{
+                pathname: `/locations/${loc.id}`,
+                state: { location: loc },
+              }}
+              // prevent the input onBlur to fire before the transition happens
+              onMouseDown={(e) => e.preventDefault()}
+            >
+              {loc.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    )
   );
 };
 

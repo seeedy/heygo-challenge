@@ -1,26 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { LocationResults } from '../';
 import useDebounce from '../../hooks/useDebounce';
+import useFetch from '../../hooks/useFetch';
 import styles from './LocationSearchInput.module.css';
 
 const LocationSearchInput = () => {
   const [value, setValue] = useState('');
   const debouncedValue = useDebounce(value, 250);
-  const [locations, setLocations] = useState([]);
+  const param = encodeURIComponent(debouncedValue);
+  const locations = useFetch(
+    `https://code-challenge-backend.herokuapp.com/locations?q=${param}`
+  );
   const [inputActive, setInputActive] = useState(false);
   const [activeLocIndex, setActiveLocIndex] = useState(-1);
-
-  useEffect(() => {
-    const param = encodeURIComponent(debouncedValue);
-    const fetchLocations = async () => {
-      const res = await fetch(
-        `https://code-challenge-backend.herokuapp.com/locations?q=${param}`
-      );
-      const locations = await res.json();
-      setLocations(locations);
-    };
-    fetchLocations();
-  }, [debouncedValue]);
+  const [displayResults, setDisplayResults] = useState(true);
 
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -28,11 +21,13 @@ const LocationSearchInput = () => {
 
   const handleFocus = () => {
     setInputActive(true);
+    setDisplayResults(true);
   };
 
-  const handleBlur = () => {
+  const handleBlur = (e) => {
+    console.log(e);
     setInputActive(false);
-    setLocations([]);
+    setDisplayResults(false);
   };
 
   const handleHover = (locationId) => {
@@ -54,7 +49,7 @@ const LocationSearchInput = () => {
           className={styles.input}
           onChange={handleChange}
           onFocus={handleFocus}
-          // onBlur={handleBlur}
+          onBlur={handleBlur}
         />
       </div>
 
@@ -62,6 +57,7 @@ const LocationSearchInput = () => {
         locations={locations}
         handleHover={handleHover}
         activeLocIndex={activeLocIndex}
+        displayResults={displayResults}
       />
     </div>
   );

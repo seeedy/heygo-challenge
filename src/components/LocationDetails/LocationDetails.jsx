@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
+import useFetch from '../../hooks/useFetch';
 
 const LocationDetails = () => {
   const { id } = useParams();
-  return <div>DEtails for {id}</div>;
+  const details = useFetch(
+    `https://code-challenge-backend.herokuapp.com/locations/${id}`
+  );
+  console.log(details);
+  return <div>Details for {id}</div>;
 };
 
 export default LocationDetails;
