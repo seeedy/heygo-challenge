@@ -56,11 +56,7 @@ const LocationSearchInput = () => {
 
       <LocationResults
         locations={locations}
-<<<<<<< HEAD
         searchterm={debouncedValue}
-=======
-        searchterm={value}
->>>>>>> cd338cf62e7d9b4de56d3aec444b76333a64fca6
         handleHover={handleHover}
         activeLocIndex={activeLocIndex}
         displayResults={displayResults}
