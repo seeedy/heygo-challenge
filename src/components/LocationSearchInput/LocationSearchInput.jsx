@@ -56,6 +56,7 @@ const LocationSearchInput = () => {
 
       <LocationResults
         locations={locations}
+        searchterm={debouncedValue}
         handleHover={handleHover}
         activeLocIndex={activeLocIndex}
         displayResults={displayResults}

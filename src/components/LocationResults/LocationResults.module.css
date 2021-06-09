@@ -2,7 +2,7 @@
 
 .results {
   position: absolute;
-  width: 91%;
+  width: 93%;
   background-color: var(--background-secondary);
   border: 1px solid var(--border-input);
   border-radius: 2px;
@@ -10,6 +10,7 @@
 }
 
 .result {
+  width: 100%;
   list-style-type: none;
   padding: 0.5rem 0.8rem;
 }

@@ -3,9 +3,19 @@ import styles from './LocationResults.module.css';
 import { Link } from 'react-router-dom';
 
 const LocationResults = (props) => {
-  const { locations, handleHover, activeLocIndex, displayResults } = props;
+  const { locations, handleHover, activeLocIndex, displayResults, searchterm } =
+    props;
 
-  if (!locations || locations.length === 0) return null;
+  if (!searchterm) return null;
+
+  if (locations && locations.length === 0)
+    return (
+      <ul className={styles.results}>
+        <li className={styles.result}>
+          No location found, please try another search term
+        </li>
+      </ul>
+    );
 
   return (
     displayResults && (
