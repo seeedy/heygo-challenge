@@ -19,6 +19,7 @@ const LocationSearchInput = () => {
     setValue(e.target.value);
   };
 
+  // focus and blur of input
   const handleFocus = () => {
     setInputActive(true);
     setDisplayResults(true);
@@ -29,6 +30,7 @@ const LocationSearchInput = () => {
     setDisplayResults(false);
   };
 
+  // mouse handling
   const handleHover = (locationId) => {
     setActiveLocIndex(
       locations.indexOf(locations.find((loc) => loc.id === locationId))

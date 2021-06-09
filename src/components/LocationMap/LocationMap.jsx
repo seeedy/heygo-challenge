@@ -6,7 +6,6 @@ const LocationMarker = () => <div className={styles.marker}></div>;
 
 class LocationMap extends Component {
   render() {
-    console.log(this.props);
     return (
       // Important! Always set the container height explicitly
       <div className={styles.map}>

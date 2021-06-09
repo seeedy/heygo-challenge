@@ -5,7 +5,7 @@ import styles from './LocationSearch.module.css';
 const LocationSearch = () => {
   return (
     <div className={styles.search}>
-      <h2 className={styles.header}>Search Location</h2>
+      <h2 className={styles.header}>Search Locations</h2>
       <LocationSearchInput />
     </div>
   );
