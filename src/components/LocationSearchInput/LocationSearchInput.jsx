@@ -17,6 +17,7 @@ const LocationSearchInput = () => {
 
   const handleChange = (e) => {
     setValue(e.target.value);
+    console.log(debouncedValue);
   };
 
   // focus and blur of input
@@ -56,6 +57,7 @@ const LocationSearchInput = () => {
 
       <LocationResults
         locations={locations}
+        searchterm={value}
         handleHover={handleHover}
         activeLocIndex={activeLocIndex}
         displayResults={displayResults}
