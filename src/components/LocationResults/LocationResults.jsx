@@ -8,7 +8,7 @@ const LocationResults = (props) => {
 
   if (!searchterm) return null;
 
-  if (locations && locations.length === 0)
+  if (locations && displayResults && locations.length === 0)
     return (
       <ul className={styles.results}>
         <li className={styles.result}>
