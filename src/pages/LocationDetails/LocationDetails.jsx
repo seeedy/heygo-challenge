@@ -11,7 +11,6 @@ const LocationDetails = () => {
   const details = useFetch(
     `https://code-challenge-backend.herokuapp.com/locations/${param}`
   );
-  console.log(details);
 
   if (!details) return null;
 
